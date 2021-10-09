@@ -15,4 +15,4 @@ jobs:
       - run: cd content-api && sudo docker build -t content-api:latest .
       - run: sudo docker tag content-api:latest fabmedical1ma.azurecr.io/content-api/content-api
       - run: sudo docker push fabmedical1ma.azurecr.io/content-api/content-api
-      - run: sudo docker run -d --name -e MONGODB_CONNECTION='mongodb://172.17.0.1/contentdb' content-api -p 3001:3001 content-api
+      - run: sudo docker run -d --name content-api -p 3001:3001 -e MONGODB_CONNECTION='mongodb://172.17.0.1/contentdb' content-api
